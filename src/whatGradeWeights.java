@@ -1,3 +1,4 @@
+import java.io.PrintStream;
 import java.util.DoubleSummaryStatistics;
 
 // create whatGrade objects to store information about a class
@@ -22,6 +23,14 @@ public class whatGradeWeights {
         this.otherPercentage = otherPercentage;
     }
 
+    public void print(PrintStream output) {
+        // print whatGradeWeights in right format
+        output.print(name + " " + hwPercentage + " " + quizPercentage
+                + " " + otherPercentage + " " + examPercentage);
+        output.println();
+
+    }
+
     public void setName(String input) {
         name = input;
     }
@@ -37,5 +46,6 @@ public class whatGradeWeights {
     public void setExPc(Double input) {
         examPercentage = input;
     }
+
 
 }

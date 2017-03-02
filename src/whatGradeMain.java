@@ -15,13 +15,13 @@ public class whatGradeMain {
         if (prompt("Would you like to start a new grade calculation?", console)) {
             whatGradeWeights temp = new whatGradeWeights();
             temp = getData(temp, console);
-            // add temp to storage
+            temp.print(output);
         }
 
         // enter your own score
         // enter your expectation
         // enter category you wanna change
-        // output 
+        // output
 
 
     }
