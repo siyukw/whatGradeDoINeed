@@ -1,15 +1,29 @@
 // the file that is being executed
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class whatGradeMain {
-    public static void main(String[] args) {
+    public static final String QUESTION_FILE = "storage.txt";
+
+    public static void main(String[] args) throws FileNotFoundException {
         intro();
         Scanner console = new Scanner(System.in);
+        PrintStream output = new PrintStream(new File(QUESTION_FILE));
         if (prompt("Would you like to start a new grade calculation?", console)) {
             whatGradeWeights temp = new whatGradeWeights();
             temp = getData(temp, console);
+            // add temp to storage
         }
+
+        // enter your own score
+        // enter your expectation
+        // enter category you wanna change
+        // output 
+
+
     }
 
     public static void intro() {
@@ -32,6 +46,11 @@ public class whatGradeMain {
         temp.setHwPc(console.nextDouble());
         System.out.println("What is the percentage of your quiz score out of your total grade? (x%)");
         temp.setQzPc(console.nextDouble());
+        System.out.println("What is the percentage of your other score out of your total grade? (x%)");
+        temp.setOPc(console.nextDouble());
+        System.out.println("What is the percentage of your exam score out of your total grade? (x%)");
+        temp.setExPc(console.nextDouble());
+
         return temp;
     }
 
