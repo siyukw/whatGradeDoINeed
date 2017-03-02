@@ -6,7 +6,7 @@ public class whatGradeMain {
     public static void main(String[] args) {
         intro();
         Scanner console = new Scanner(System.in);
-        if(prompt("Would you like to start a new grade calculation?", console)) {
+        if (prompt("Would you like to start a new grade calculation?", console)) {
             whatGradeWeights temp = new whatGradeWeights();
             temp = getData(temp, console);
         }
@@ -27,6 +27,9 @@ public class whatGradeMain {
     public static whatGradeWeights getData(whatGradeWeights temp, Scanner console) {
         System.out.println("What is the name of the class?");
         temp.setName(console.next());
+        System.out.println("What is the percentage of your homework score out of your" +
+                            " total grade? (x% or 0% for nothing)");
+        temp.setHwPc(console.nextDouble());
         System.out.println("What is the percentage of your quiz score out of your total grade? (x%)");
         temp.setQzPc(console.nextDouble());
         return temp;
