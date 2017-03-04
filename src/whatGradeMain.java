@@ -18,6 +18,7 @@ public class whatGradeMain {
             temp.print(output);
         }
 
+        getGrades(console);
         // enter your own score
         // enter your expectation
         // enter category you wanna change
@@ -52,6 +53,24 @@ public class whatGradeMain {
         temp.setExPc(console.nextDouble());
 
         return temp;
+    }
+
+    public static void getGrades(Scanner console) throws FileNotFoundException {
+        System.out.println("What class would you like to see?");
+        String inputName = console.next();
+        Scanner input = new Scanner(new File(QUESTION_FILE));
+        String line = "";
+        while(input.hasNextLine()) {
+            line = input.nextLine();
+            Scanner lineS = new Scanner(line);
+            if (lineS.next().equals(inputName)) {
+                break;
+            }
+        }
+        // line stores the line of the class from file
+        // read file into a weight object
+        // add methods in object class
+
     }
 
 }
