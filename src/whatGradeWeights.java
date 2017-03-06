@@ -1,5 +1,5 @@
-import java.io.PrintStream;
-import java.util.DoubleSummaryStatistics;
+import java.io.*;
+import java.util.*;
 
 // create whatGrade objects to store information about a class
 // name, hwpc, quizpc, otherpc, exampc
@@ -9,6 +9,7 @@ public class whatGradeWeights {
     private double hwPercentage;
     private double otherPercentage;
     private double examPercentage;
+    private Scanner console;
 
     public whatGradeWeights() {
         this(null, 0, 0, 0, 0);
@@ -29,6 +30,10 @@ public class whatGradeWeights {
                 + " " + otherPercentage + " " + examPercentage);
         output.println();
 
+    }
+
+    public void setInput(File storage) throws FileNotFoundException{
+        console = new Scanner(storage);
     }
 
     public void setName(String input) {
