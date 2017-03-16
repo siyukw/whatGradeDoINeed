@@ -70,7 +70,7 @@ public class whatGradeMain {
         // line stores the line of the class from file
         // read file into a weight object
         // add methods in object class
-        // closing
+        // closing senctences
 
     }
 
