@@ -67,7 +67,12 @@ public class whatGradeMain {
                 break;
             }
         }
-        // line stores the line of the class from file
+        Scanner lineS = new Scanner(line);
+        while (lineS.hasNext()){
+            String name = lineS.next();
+            String quiz = lineS.next();
+            
+        }
         // read file into a weight object
         // add methods in object class
         // closing sentences
