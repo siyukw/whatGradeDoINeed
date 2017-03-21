@@ -21,11 +21,16 @@ public class whatGradeMain {
         } else {
             temp = getGrades(console);
         }
+        enterScore(temp);
         // enter your own score
         // enter your expectation
         // enter category you wanna change
         // output
 
+
+    }
+
+    public static void enterScore(whatGradeWeights temp) {
 
     }
 
