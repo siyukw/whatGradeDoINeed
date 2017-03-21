@@ -70,8 +70,12 @@ public class whatGradeMain {
         Scanner lineS = new Scanner(line);
         while (lineS.hasNext()){
             String name = lineS.next();
-            String quiz = lineS.next();
-            
+            double hw = lineS.nextDouble();
+            double quiz = lineS.nextDouble();
+            double other = lineS.nextDouble();
+            double exam = lineS.nextDouble();
+
+
         }
         // read file into a weight object
         // add methods in object class
