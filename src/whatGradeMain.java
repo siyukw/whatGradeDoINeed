@@ -11,14 +11,16 @@ public class whatGradeMain {
     public static void main(String[] args) throws FileNotFoundException {
         intro();
         Scanner console = new Scanner(System.in);
+        whatGradeWeights temp = new whatGradeWeights();
+        // temp is the object for grade percentage
         PrintStream output = new PrintStream(new File(QUESTION_FILE));
         if (prompt("Would you like to start a new grade calculation?", console)) {
-            whatGradeWeights temp = new whatGradeWeights();
+
             temp = getData(temp, console);
             temp.print(output);
+        } else {
+            temp = getGrades(console);
         }
-
-        getGrades(console);
         // enter your own score
         // enter your expectation
         // enter category you wanna change
@@ -55,7 +57,7 @@ public class whatGradeMain {
         return temp;
     }
 
-    public static void getGrades(Scanner console) throws FileNotFoundException {
+    public static whatGradeWeights getGrades(Scanner console) throws FileNotFoundException {
         System.out.println("What class would you like to see?");
         String inputName = console.next();
         Scanner input = new Scanner(new File(QUESTION_FILE));
@@ -67,6 +69,7 @@ public class whatGradeMain {
                 break;
             }
         }
+        whatGradeWeights curr = new whatGradeWeights();
         Scanner lineS = new Scanner(line);
         while (lineS.hasNext()){
             String name = lineS.next();
@@ -74,13 +77,13 @@ public class whatGradeMain {
             double quiz = lineS.nextDouble();
             double other = lineS.nextDouble();
             double exam = lineS.nextDouble();
-
-
+            curr.setName(name);
+            curr.setHwPc(hw);
+            curr.setQzPc(quiz);
+            curr.setExPc(exam);
+            curr.setOPc(other);
         }
-        // read file into a weight object
-        // add methods in object class
-        // closing sentences
-
+        return curr;
     }
 
 }
