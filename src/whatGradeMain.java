@@ -15,13 +15,19 @@ public class whatGradeMain {
         // temp is the object for grade percentage
         PrintStream output = new PrintStream(new File(QUESTION_FILE));
         if (prompt("Would you like to start a new grade calculation?", console)) {
-
             temp = getData(temp, console);
             temp.print(output);
         } else {
             temp = getGrades(console);
         }
-        enterScore(temp);
+        whatGradeWeights num = new whatGradeWeights();
+        if (!prompt("Would you like to enter new grades", console)) {
+            num = getNums(num, console);
+            num.print(output);
+        } else {
+            num = enterScore(num, console);
+        }
+
         // enter your own score
         // enter your expectation
         // enter category you wanna change
@@ -30,7 +36,11 @@ public class whatGradeMain {
 
     }
 
-    public static void enterScore(whatGradeWeights temp) {
+    public static whatGradeWeights getNums(whatGradeWeights num, Scanner console) {
+
+    }
+
+    public static whatGradeWeights enterScore(whatGradeWeights num, Scanner console) {
 
     }
 
