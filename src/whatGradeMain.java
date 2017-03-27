@@ -1,5 +1,7 @@
 // the file that is being executed
 
+// this project will be put on hold due to lack of interest,
+// I will restart it around half way Spring 2017
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
